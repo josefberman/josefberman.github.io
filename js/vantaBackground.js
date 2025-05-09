@@ -17,7 +17,7 @@ function initVantaBackground() {
         oldCanvas.remove();
     }
     
-    // Initialize VANTA.NET effect
+    // Initialize VANTA.NET effect with clean, modern settings
     VANTA.NET({
         el: heroElement,
         mouseControls: true,
@@ -29,7 +29,11 @@ function initVantaBackground() {
         scaleMobile: 1.00,
         color: 0xff7043, // Orange color
         backgroundColor: 0x0c1e2e, // Dark blue background
-        points: 5.00,
-        spacing: 14.00
+        points: 8.00, // More points for a finer network
+        maxDistance: 18.00, // Shorter connections for cleaner look
+        spacing: 16.00, // More spacing for elegance
+        showDots: false, // Hide dots for cleaner lines only
+        speed: 0.5, // Slower, more subtle movement
+        lineWidth: 0.5, // Thinner lines for a more modern feel
     });
 } 
