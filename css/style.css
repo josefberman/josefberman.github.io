@@ -23,8 +23,8 @@
     --error: #f44336;
 
     /* Typography */
-    --font-heading: 'Merriweather', 'Georgia', serif;
-    --font-body: 'Merriweather', 'Georgia', serif;
+    --font-heading: 'Comfortaa', 'Helvetica Neue', sans-serif;
+    --font-body: 'Comfortaa', 'Helvetica Neue', sans-serif;
     
     /* Spacing */
     --space-xs: 0.25rem;
@@ -35,7 +35,7 @@
     --space-xxl: 5rem;
     
     /* Other */
-    --border-radius: 8px;
+    --border-radius: 12px;
     --transition: all 0.3s ease;
     --shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
     --container-width: 1200px;
