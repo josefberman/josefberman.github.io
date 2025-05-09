@@ -23,8 +23,8 @@
     --error: #f44336;
 
     /* Typography */
-    --font-heading: 'Inter', 'Roboto', 'Helvetica Neue', sans-serif;
-    --font-body: 'Inter', 'Open Sans', sans-serif;
+    --font-heading: 'Merriweather', 'Georgia', serif;
+    --font-body: 'Merriweather', 'Georgia', serif;
     
     /* Spacing */
     --space-xs: 0.25rem;
@@ -56,26 +56,27 @@ html {
 
 body {
     font-family: var(--font-body);
-    line-height: 1.6;
+    line-height: 1.7;
     color: var(--text-primary);
     background-color: var(--bg-dark);
     transition: var(--transition);
+    font-weight: 300;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
-    line-height: 1.3;
+    line-height: 1.4;
     margin-bottom: var(--space-md);
     color: var(--text-primary);
     font-weight: 700;
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
 }
 
 h1 {
-    font-size: 3.5rem;
+    font-size: 3.2rem;
     margin-bottom: var(--space-lg);
-    line-height: 1.1;
-    letter-spacing: -0.03em;
+    line-height: 1.2;
+    letter-spacing: 0;
 }
 
 h2 {
@@ -88,7 +89,7 @@ h3 {
 
 p {
     margin-bottom: var(--space-md);
-    font-size: 1.05rem;
+    font-size: 1rem;
     color: var(--text-secondary);
 }
 
@@ -127,19 +128,19 @@ img {
 
 .section-title {
     text-transform: uppercase;
-    font-size: 0.9rem;
-    letter-spacing: 1.5px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
     color: var(--primary);
     margin-bottom: var(--space-sm);
     font-weight: 700;
 }
 
 .section-subtitle {
-    font-size: 2.75rem;
+    font-size: 2.5rem;
     margin-bottom: var(--space-xl);
     max-width: 800px;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
+    line-height: 1.3;
+    letter-spacing: 0;
 }
 
 .bg-light {
@@ -151,15 +152,15 @@ img {
     display: inline-block;
     padding: 0.8rem 2rem;
     border-radius: var(--border-radius);
-    font-weight: 600;
+    font-weight: 700;
     text-align: center;
     cursor: pointer;
     transition: var(--transition);
     border: none;
     font-family: var(--font-body);
     text-transform: uppercase;
-    letter-spacing: 1px;
-    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    font-size: 0.85rem;
 }
 
 .btn-primary {
@@ -207,10 +208,10 @@ nav {
 
 .logo a {
     font-family: var(--font-heading);
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     font-weight: 700;
     color: var(--text-primary);
-    letter-spacing: -0.02em;
+    letter-spacing: 0;
 }
 
 .nav-links {
@@ -224,7 +225,7 @@ nav {
 
 .nav-links a {
     color: var(--text-primary);
-    font-weight: 500;
+    font-weight: 400;
     position: relative;
     font-size: 0.95rem;
 }
@@ -263,15 +264,30 @@ nav {
     background-color: var(--bg-darker);
 }
 
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, transparent 30%, var(--bg-darker) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
 .hero .container {
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
 
 .hero-content {
     flex: 1;
     padding-right: var(--space-lg);
     z-index: 1;
+    position: relative;
 }
 
 .hero-tagline {
@@ -282,12 +298,14 @@ nav {
     color: var(--primary);
     margin-bottom: var(--space-md);
     font-weight: 600;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .hero-content h1 {
     font-size: 3.75rem;
     margin-bottom: var(--space-lg);
     line-height: 1.1;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .hero-content p {
@@ -295,6 +313,7 @@ nav {
     margin-bottom: var(--space-xl);
     color: var(--text-secondary);
     max-width: 600px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .hero-btns .btn {
@@ -309,6 +328,7 @@ nav {
     align-items: center;
     justify-content: center;
     z-index: 0;
+    position: relative;
 }
 
 #swarmCanvas {
@@ -316,6 +336,24 @@ nav {
     height: 100%;
     min-height: 500px;
     display: block;
+    position: relative;
+    z-index: 3;
+}
+
+/* Neural Background Styles */
+.neural-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+#neuralCanvas {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 /* ===== PROJECTS GRID ===== */
@@ -372,11 +410,12 @@ nav {
 }
 
 .project-subheader {
-    font-size: 1rem;
-    font-weight: 600;
+    font-size: 0.95rem;
+    font-weight: 400;
+    font-style: italic;
     color: var(--primary);
     margin-bottom: var(--space-sm);
-    letter-spacing: 0.5px;
+    letter-spacing: 0;
 }
 
 .project-content p {
@@ -611,19 +650,22 @@ nav {
 .contact-info {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     gap: var(--space-xl);
     margin-bottom: var(--space-xl);
+    padding: var(--space-lg) 0;
 }
 
 .contact-item {
     margin-bottom: 0;
+    display: inline-block;
 }
 
 .contact-item a {
     font-size: 2.5rem;
     color: var(--text-primary);
     transition: var(--transition);
+    display: block;
 }
 
 .contact-item a:hover {
@@ -728,6 +770,8 @@ footer {
     .contact-info {
         justify-content: center;
         margin-bottom: var(--space-lg);
+        padding: var(--space-md) 0;
+        gap: var(--space-lg);
     }
     
     .contact-item a {
