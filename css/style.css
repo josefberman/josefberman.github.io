@@ -367,6 +367,14 @@ nav {
     font-size: 1.5rem;
 }
 
+.project-subheader {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: var(--space-sm);
+    letter-spacing: 0.5px;
+}
+
 .project-content p {
     color: var(--text-secondary);
     margin-bottom: var(--space-lg);
