@@ -1,0 +1,21 @@
+/* Profile picture size adjustments */
+
+/* Increase profile picture size by 15% */
+.about-image img {
+    max-width: 460px; /* Original 400px + 15% = 460px */
+    width: 115%; /* Increase width by 15% */
+}
+
+/* Adjust the about content grid to accommodate the larger image */
+.about-content {
+    grid-template-columns: 460px 1fr;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .about-image img {
+        width: 100%;
+        max-width: 460px;
+        margin: 0 auto;
+    }
+} 
