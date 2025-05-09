@@ -1,21 +1,21 @@
 /* Profile picture size adjustments */
 
-/* Increase profile picture size by 30% */
+/* Increase profile picture size by 45% */
 .about-image img {
-    max-width: 520px; /* Original 400px + 30% = 520px */
-    width: 130%; /* Increase width by 30% */
+    max-width: 580px; /* Original 400px + 45% = 580px */
+    width: 145%; /* Increase width by 45% */
 }
 
 /* Adjust the about content grid to accommodate the larger image */
 .about-content {
-    grid-template-columns: 520px 1fr;
+    grid-template-columns: 580px 1fr;
 }
 
 /* Responsive adjustments */
 @media screen and (max-width: 768px) {
     .about-image img {
         width: 100%;
-        max-width: 520px;
+        max-width: 580px;
         margin: 0 auto;
     }
 } 
