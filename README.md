@@ -4,18 +4,17 @@ A professional portfolio website built with HTML, CSS, and JavaScript for GitHub
 
 ## Features
 
-- Clean, modern, and responsive design
-- Dark mode toggle
-- Interactive swarm animation
+- Modern, responsive design with dark blue theme and orange accents
+- Interactive orange particle swarm animation
 - Smooth scrolling and subtle animations
 - Mobile-friendly layout
 - SEO-optimized
 
 ## Sections
 
-- **Home** - Introduction with interactive swarm animation
-- **About** - Professional bio and background
+- **Home** - Introduction with interactive particle swarm animation
 - **Projects** - Showcase of research and portfolio projects
+- **About** - Professional bio and academic background
 - **Publications** - Academic publications with citations
 - **Blog** - Ready for future blog posts
 - **Contact** - Contact information and links
@@ -43,9 +42,10 @@ To modify the color scheme, edit the CSS variables in `css/style.css`:
 ```css
 :root {
     /* Colors */
-    --primary: #1565c0;
-    --primary-dark: #003c8f;
-    --primary-light: #5e92f3;
+    --primary: #ff7043; /* Orange accent color */
+    --primary-dark: #e64a19;
+    --primary-light: #ffab91;
+    --bg-dark: #0c1e2e; /* Dark blue background */
     /* ... other variables */
 }
 ```

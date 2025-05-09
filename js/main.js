@@ -141,11 +141,11 @@ function initSwarmAnimation() {
     
     // Set canvas dimensions to match parent
     canvas.width = parentRect.width;
-    canvas.height = 400;
+    canvas.height = parentRect.height || 400;
     
     // Particles array
     const particles = [];
-    const particleCount = 100;
+    const particleCount = 80;
     
     // Mouse position
     let mouse = {
@@ -166,12 +166,17 @@ function initSwarmAnimation() {
         constructor() {
             this.x = Math.random() * canvas.width;
             this.y = Math.random() * canvas.height;
-            this.size = Math.random() * 3 + 1;
+            this.size = Math.random() * 4 + 1; // Slightly larger particles
             this.baseX = this.x;
             this.baseY = this.y;
-            this.density = Math.random() * 30 + 1;
+            this.density = Math.random() * 20 + 5;
             this.color = getRandomColor();
-            this.speed = 0.5;
+            this.speed = 0.3;
+            this.angle = Math.random() * 2 * Math.PI; // Random direction
+            this.velocity = {
+                x: Math.cos(this.angle) * this.speed,
+                y: Math.sin(this.angle) * this.speed
+            };
         }
         
         draw() {
@@ -180,16 +185,16 @@ function initSwarmAnimation() {
             ctx.fillStyle = this.color;
             ctx.fill();
             
-            // Draw connections
+            // Draw connections with nearby particles
             for (let i = 0; i < particles.length; i++) {
                 const dx = this.x - particles[i].x;
                 const dy = this.y - particles[i].y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
                 
-                if (distance < 100) {
+                if (distance < 120) { // Increased connection distance
                     ctx.beginPath();
                     ctx.strokeStyle = this.color;
-                    ctx.globalAlpha = 1 - (distance / 100);
+                    ctx.globalAlpha = 0.2 - (distance / 600); // More subtle connections
                     ctx.lineWidth = 0.5;
                     ctx.moveTo(this.x, this.y);
                     ctx.lineTo(particles[i].x, particles[i].y);
@@ -213,29 +218,29 @@ function initSwarmAnimation() {
                 const directionX = forceDirectionX * force * this.density;
                 const directionY = forceDirectionY * force * this.density;
                 
-                this.x -= directionX;
-                this.y -= directionY;
+                this.x += directionX * 0.3; // Attraction instead of repulsion
+                this.y += directionY * 0.3;
             } else {
-                // Return to original position
-                if (this.x !== this.baseX) {
-                    const dx = this.x - this.baseX;
-                    this.x -= dx / 20;
-                }
-                if (this.y !== this.baseY) {
-                    const dy = this.y - this.baseY;
-                    this.y -= dy / 20;
-                }
+                // Natural movement
+                this.x += this.velocity.x;
+                this.y += this.velocity.y;
+                
+                // Slightly change direction randomly
+                this.velocity.x += (Math.random() - 0.5) * 0.05;
+                this.velocity.y += (Math.random() - 0.5) * 0.05;
+                
+                // Dampen velocity to prevent extreme speeds
+                this.velocity.x *= 0.98;
+                this.velocity.y *= 0.98;
             }
             
-            // Random movement
-            this.x += (Math.random() - 0.5) * this.speed;
-            this.y += (Math.random() - 0.5) * this.speed;
-            
-            // Keep within canvas
-            if (this.x < 0) this.x = 0;
-            if (this.x > canvas.width) this.x = canvas.width;
-            if (this.y < 0) this.y = 0;
-            if (this.y > canvas.height) this.y = canvas.height;
+            // Keep within canvas with bounce effect
+            if (this.x <= 0 || this.x >= canvas.width) {
+                this.velocity.x = -this.velocity.x;
+            }
+            if (this.y <= 0 || this.y >= canvas.height) {
+                this.velocity.y = -this.velocity.y;
+            }
             
             this.draw();
         }
@@ -259,23 +264,23 @@ function initSwarmAnimation() {
         requestAnimationFrame(animate);
     }
     
-    // Random color generator
+    // Random color generator - Using orange shades to match the theme
     function getRandomColor() {
-        const colors = [
-            'rgba(21, 101, 192, 0.8)',  // Primary color
-            'rgba(94, 146, 243, 0.8)',  // Primary light
-            'rgba(0, 60, 143, 0.8)',    // Primary dark
-            'rgba(84, 110, 122, 0.6)'   // Secondary color
+        const orangeShades = [
+            'rgba(255, 112, 67, 0.8)',  // Primary orange
+            'rgba(255, 171, 145, 0.6)', // Light orange
+            'rgba(230, 74, 25, 0.7)',   // Dark orange
+            'rgba(255, 112, 67, 0.5)'   // Semi-transparent orange
         ];
         
-        return colors[Math.floor(Math.random() * colors.length)];
+        return orangeShades[Math.floor(Math.random() * orangeShades.length)];
     }
     
     // Handle window resize
     window.addEventListener('resize', () => {
         const parentRect = canvas.parentElement.getBoundingClientRect();
         canvas.width = parentRect.width;
-        canvas.height = 400;
+        canvas.height = parentRect.height || 400;
         
         // Reset particles
         particles.length = 0;
