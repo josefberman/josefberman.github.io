@@ -23,7 +23,7 @@
     --error: #f44336;
 
     /* Typography */
-    --font-heading: 'Playfair Display', 'Merriweather', serif;
+    --font-heading: 'Inter', 'Roboto', 'Helvetica Neue', sans-serif;
     --font-body: 'Inter', 'Open Sans', sans-serif;
     
     /* Spacing */
@@ -68,13 +68,14 @@ h1, h2, h3, h4, h5, h6 {
     margin-bottom: var(--space-md);
     color: var(--text-primary);
     font-weight: 700;
-    letter-spacing: -0.5px;
+    letter-spacing: -0.02em;
 }
 
 h1 {
     font-size: 3.5rem;
     margin-bottom: var(--space-lg);
     line-height: 1.1;
+    letter-spacing: -0.03em;
 }
 
 h2 {
@@ -126,8 +127,8 @@ img {
 
 .section-title {
     text-transform: uppercase;
-    font-size: 0.85rem;
-    letter-spacing: 2px;
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
     color: var(--primary);
     margin-bottom: var(--space-sm);
     font-weight: 700;
@@ -137,6 +138,8 @@ img {
     font-size: 2.75rem;
     margin-bottom: var(--space-xl);
     max-width: 800px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
 }
 
 .bg-light {
@@ -207,6 +210,7 @@ nav {
     font-size: 1.5rem;
     font-weight: 700;
     color: var(--text-primary);
+    letter-spacing: -0.02em;
 }
 
 .nav-links {
@@ -604,18 +608,27 @@ nav {
     gap: var(--grid-gap);
 }
 
-.contact-item {
+.contact-info {
     display: flex;
     align-items: center;
-    margin-bottom: var(--space-lg);
+    justify-content: flex-start;
+    gap: var(--space-xl);
+    margin-bottom: var(--space-xl);
 }
 
-.contact-item i {
-    font-size: 1.5rem;
+.contact-item {
+    margin-bottom: 0;
+}
+
+.contact-item a {
+    font-size: 2.5rem;
+    color: var(--text-primary);
+    transition: var(--transition);
+}
+
+.contact-item a:hover {
     color: var(--primary);
-    margin-right: var(--space-md);
-    width: 30px;
-    text-align: center;
+    transform: translateY(-5px);
 }
 
 .contact-form {
@@ -711,6 +724,15 @@ footer {
     .mobile-menu-btn {
         display: block;
     }
+    
+    .contact-info {
+        justify-content: center;
+        margin-bottom: var(--space-lg);
+    }
+    
+    .contact-item a {
+        font-size: 2rem;
+    }
 }
 
 /* Header scroll effect */
@@ -780,7 +802,12 @@ header.scrolled {
     }
     
     .contact-info {
+        justify-content: center;
         margin-bottom: var(--space-lg);
+    }
+    
+    .contact-item a {
+        font-size: 2rem;
     }
     
     .footer-content {
