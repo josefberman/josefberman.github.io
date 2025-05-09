@@ -25,10 +25,10 @@ function initNeuralAnimation() {
     // Colors from the theme
     const colors = {
         background: '#0c1e2e', // Dark blue background
-        neuronActive: 'rgba(255, 112, 67, 0.7)', // Orange for active neurons (more transparent)
-        neuronInactive: '#455a64', // Secondary color for inactive neurons
-        connectionActive: 'rgba(255, 112, 67, 0.3)', // Orange for active connections (more transparent)
-        connectionInactive: 'rgba(69, 90, 100, 0.2)' // Secondary for inactive connections
+        neuronActive: 'rgba(255, 112, 67, 0.65)', // Orange for active neurons (slightly more transparent)
+        neuronInactive: 'rgba(69, 90, 100, 0.7)', // Secondary color for inactive neurons
+        connectionActive: 'rgba(255, 112, 67, 0.25)', // Orange for active connections (more transparent)
+        connectionInactive: 'rgba(69, 90, 100, 0.15)' // Secondary for inactive connections
     };
     
     // Neural network elements - organized in clusters
@@ -44,21 +44,27 @@ function initNeuralAnimation() {
         
         // Create nodes within the cluster
         for (let i = 0; i < nodeCount; i++) {
-            // Place nodes in a circular pattern around the center
-            const angle = Math.random() * Math.PI * 2;
-            const distance = Math.random() * radius * 0.8; // Keep within 80% of radius
+            // Distribute nodes more evenly throughout the cluster
+            // Use a spiral pattern for more even distribution
+            const angle = i * (Math.PI * 2 / nodeCount) + Math.random() * 0.5;
+            const distanceRatio = Math.sqrt(i / nodeCount); // Square root for more even distribution
+            const distance = distanceRatio * radius * 0.85; // Use most of the radius
+            
             const x = centerX + Math.cos(angle) * distance;
             const y = centerY + Math.sin(angle) * distance;
+            
+            // More variation in node sizes for visual interest
+            const nodeSize = Math.random() * 2.5 + 1.8;
             
             clusterNodes.push({
                 x: x,
                 y: y,
                 originalX: x, // Original position to maintain clustering
                 originalY: y,
-                radius: Math.random() * 2.5 + 1.5, // Slightly smaller nodes
+                radius: nodeSize, // Variable node sizes
                 color: Math.random() > 0.3 ? colors.neuronInactive : colors.neuronActive,
-                velX: (Math.random() - 0.5) * 0.1, // Even slower movement
-                velY: (Math.random() - 0.5) * 0.1,
+                velX: (Math.random() - 0.5) * 0.06, // Slower movement
+                velY: (Math.random() - 0.5) * 0.06,
                 pulseSpeed: Math.random() * 0.02 + 0.01,
                 pulseDirection: Math.random() > 0.5 ? 1 : -1,
                 pulseAmount: 0,
@@ -66,8 +72,8 @@ function initNeuralAnimation() {
             });
         }
         
-        // Create connections within this cluster - limited number
-        const maxConnections = Math.min(15, Math.floor(nodeCount * 1.2)); // Limit total connections
+        // Create connections within this cluster - limited but sufficient for larger clusters
+        const maxConnections = Math.min(35, Math.floor(nodeCount * 1.3)); // Slightly more connections for larger clusters
         let connectionCount = 0;
         
         // Sort potential connections by distance
@@ -78,7 +84,7 @@ function initNeuralAnimation() {
                 const dy = clusterNodes[i].y - clusterNodes[j].y;
                 const distance = Math.sqrt(dx * dx + dy * dy);
                 
-                if (distance < radius * 0.7) { // Only connect nodes that are close
+                if (distance < radius * 0.65) { // Stricter distance requirement for connections
                     potentialConnections.push({
                         i: i,
                         j: j,
@@ -98,23 +104,23 @@ function initNeuralAnimation() {
                 fromCluster: clusters.length,
                 fromNode: conn.i,
                 toNode: conn.j,
-                width: Math.random() * 0.8 + 0.3, // Thinner connections
+                width: Math.random() * 0.6 + 0.3, // Thinner connections
                 color: colors.connectionInactive,
-                pulsePosition: 0,
                 pulseActive: false,
+                pulsePosition: 0,
                 pulseSpeed: Math.random() * 0.01 + 0.001
             });
             connectionCount++;
         }
         
-        // Return the complete cluster with a slow movement vector for the entire cluster
+        // Return the complete cluster with a very slow movement vector for cohesion
         return {
             centerX: centerX,
             centerY: centerY,
             radius: radius,
             nodes: clusterNodes,
-            velX: (Math.random() - 0.5) * 0.05, // Very slow cluster movement
-            velY: (Math.random() - 0.5) * 0.05,
+            velX: (Math.random() - 0.5) * 0.02, // Even slower cluster movement for stability
+            velY: (Math.random() - 0.5) * 0.02,
             connectionCount: connectionCount
         };
     }
@@ -126,8 +132,8 @@ function initNeuralAnimation() {
         connections = [];
         molecules = [];
         
-        // Create several neural clusters - fewer clusters with more spacing
-        const clusterCount = Math.floor(canvas.width * canvas.height / 500000) + 3; // Fewer clusters
+        // Create several neural clusters - fewer but larger clusters
+        const clusterCount = Math.floor(canvas.width * canvas.height / 700000) + 2; // Even fewer clusters
         
         // Calculate better positions to avoid overlap
         const positions = [];
@@ -149,7 +155,7 @@ function initNeuralAnimation() {
                     const distance = Math.sqrt(dx*dx + dy*dy);
                     
                     // If too close to another cluster, reject this position
-                    if (distance < 200) {
+                    if (distance < 350) { // Larger minimum distance between clusters
                         validPosition = false;
                         break;
                     }
@@ -165,14 +171,14 @@ function initNeuralAnimation() {
         
         // Create clusters at the calculated positions
         for (const pos of positions) {
-            const radius = Math.random() * 40 + 40; // 40-80px radius (smaller clusters)
-            const nodeCount = Math.floor(Math.random() * 8) + 10; // 10-18 nodes per cluster (fewer nodes)
+            const radius = Math.random() * 60 + 80; // 80-140px radius (much larger clusters)
+            const nodeCount = Math.floor(Math.random() * 15) + 20; // 20-35 nodes per cluster (more nodes)
             
             clusters.push(createCluster(pos.x, pos.y, radius, nodeCount));
         }
         
         // Create molecule structures - fewer molecules
-        const moleculeCount = Math.floor(canvas.width * canvas.height / 200000); // Even fewer molecules
+        const moleculeCount = Math.floor(canvas.width * canvas.height / 300000); // Even fewer molecules for less crowding
         
         for (let i = 0; i < moleculeCount; i++) {
             // Create a more complex molecule structure
@@ -185,8 +191,8 @@ function initNeuralAnimation() {
             molecules.push({
                 x: x,
                 y: y,
-                velX: (Math.random() - 0.5) * 0.15, // Slower movement
-                velY: (Math.random() - 0.5) * 0.15,
+                velX: (Math.random() - 0.5) * 0.12, // Slower movement
+                velY: (Math.random() - 0.5) * 0.12,
                 atoms: structure.atoms,
                 bonds: structure.bonds,
                 rotation: Math.random() * Math.PI * 2,
@@ -215,7 +221,7 @@ function initNeuralAnimation() {
                     x: Math.cos(angle) * radius,
                     y: Math.sin(angle) * radius,
                     radius: Math.random() * 2 + 2.5,
-                    color: Math.random() > 0.6 ? 'rgba(255, 112, 67, 0.6)' : colors.neuronInactive
+                    color: Math.random() > 0.6 ? 'rgba(255, 112, 67, 0.55)' : colors.neuronInactive
                 });
                 
                 // Connect each atom to the next one in the ring
@@ -232,7 +238,7 @@ function initNeuralAnimation() {
                 x: 0,
                 y: 0,
                 radius: 3.5,
-                color: 'rgba(255, 112, 67, 0.6)'
+                color: 'rgba(255, 112, 67, 0.55)'
             });
             
             // First level branches
@@ -245,7 +251,7 @@ function initNeuralAnimation() {
                     x: Math.cos(angle) * distance,
                     y: Math.sin(angle) * distance,
                     radius: Math.random() * 1.5 + 2,
-                    color: i % 2 === 0 ? 'rgba(255, 112, 67, 0.6)' : colors.neuronInactive
+                    color: i % 2 === 0 ? 'rgba(255, 112, 67, 0.55)' : colors.neuronInactive
                 });
                 
                 // Connect to central atom
@@ -264,7 +270,7 @@ function initNeuralAnimation() {
                         x: Math.cos(branchAngle) * branchDistance,
                         y: Math.sin(branchAngle) * branchDistance,
                         radius: Math.random() * 1.5 + 1.5,
-                        color: Math.random() > 0.5 ? 'rgba(255, 112, 67, 0.6)' : colors.neuronInactive
+                        color: Math.random() > 0.5 ? 'rgba(255, 112, 67, 0.55)' : colors.neuronInactive
                     });
                     
                     // Connect to parent atom
@@ -288,7 +294,7 @@ function initNeuralAnimation() {
                     x: firstRingCenter.x + Math.cos(angle) * ringRadius,
                     y: firstRingCenter.y + Math.sin(angle) * ringRadius,
                     radius: Math.random() * 1.5 + 2,
-                    color: i % 3 === 0 ? 'rgba(255, 112, 67, 0.6)' : colors.neuronInactive
+                    color: i % 3 === 0 ? 'rgba(255, 112, 67, 0.55)' : colors.neuronInactive
                 });
                 
                 // Connect in ring
@@ -308,7 +314,7 @@ function initNeuralAnimation() {
                         x: secondRingCenter.x + Math.cos(angle) * ringRadius,
                         y: secondRingCenter.y + Math.sin(angle) * ringRadius,
                         radius: Math.random() * 1.5 + 2,
-                        color: i % 3 === 0 ? 'rgba(255, 112, 67, 0.6)' : colors.neuronInactive
+                        color: i % 3 === 0 ? 'rgba(255, 112, 67, 0.55)' : colors.neuronInactive
                     });
                     
                     // Connect in ring with adjusted indices
@@ -353,12 +359,12 @@ function initNeuralAnimation() {
         // Glow effect for active neurons (more subtle)
         if (node.color === colors.neuronActive) {
             ctx.beginPath();
-            ctx.arc(node.x, node.y, node.radius * radiusMod * 1.5, 0, Math.PI * 2);
+            ctx.arc(node.x, node.y, node.radius * radiusMod * 1.6, 0, Math.PI * 2);
             const gradient = ctx.createRadialGradient(
                 node.x, node.y, node.radius * radiusMod,
-                node.x, node.y, node.radius * radiusMod * 1.5
+                node.x, node.y, node.radius * radiusMod * 1.6
             );
-            gradient.addColorStop(0, 'rgba(255, 112, 67, 0.15)'); // More transparent
+            gradient.addColorStop(0, 'rgba(255, 112, 67, 0.12)'); // More transparent
             gradient.addColorStop(1, 'rgba(255, 112, 67, 0)');
             ctx.fillStyle = gradient;
             ctx.fill();
@@ -384,7 +390,7 @@ function initNeuralAnimation() {
             
             ctx.beginPath();
             ctx.arc(xPos, yPos, conn.width * 2, 0, Math.PI * 2);
-            ctx.fillStyle = 'rgba(255, 112, 67, 0.4)'; // More transparent pulse
+            ctx.fillStyle = 'rgba(255, 112, 67, 0.35)'; // More transparent pulse
             ctx.fill();
         }
     }
@@ -409,7 +415,7 @@ function initNeuralAnimation() {
             ctx.beginPath();
             ctx.moveTo(x1, y1);
             ctx.lineTo(x2, y2);
-            ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)'; // More transparent bonds
+            ctx.strokeStyle = 'rgba(255, 255, 255, 0.15)'; // More transparent bonds
             ctx.lineWidth = 1.2;
             ctx.stroke();
             
@@ -442,7 +448,7 @@ function initNeuralAnimation() {
         });
     }
     
-    // Update neural network state
+    // Update neural network state with stronger cohesion
     function updateNetwork() {
         // Update clusters
         clusters.forEach(cluster => {
@@ -468,9 +474,16 @@ function initNeuralAnimation() {
                 const offsetX = node.x - (node.originalX + (cluster.centerX - node.originalX));
                 const offsetY = node.y - (node.originalY + (cluster.centerY - node.originalY));
                 
-                // Apply cohesive force to keep nodes near original positions relative to cluster
-                node.x -= offsetX * 0.03; // Spring constant
-                node.y -= offsetY * 0.03;
+                // Apply stronger cohesive force to keep nodes near original positions relative to cluster
+                node.x -= offsetX * 0.06; // Stronger spring constant
+                node.y -= offsetY * 0.06;
+                
+                // Extra constraint - if node drifts too far, pull it back more strongly
+                const driftDistance = Math.sqrt(offsetX * offsetX + offsetY * offsetY);
+                if (driftDistance > cluster.radius * 0.18) {
+                    node.x -= offsetX * 0.15; // Extra strong pull when too far
+                    node.y -= offsetY * 0.15;
+                }
                 
                 // Pulse effect
                 node.pulseAmount += node.pulseSpeed * node.pulseDirection;
