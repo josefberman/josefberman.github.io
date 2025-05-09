@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
     <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
 </head>
 <body>
@@ -20,8 +20,8 @@
             </div>
             <ul class="nav-links">
                 <li><a href="#home" class="active">Home</a></li>
-                <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#publications">Publications</a></li>
                 <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
@@ -33,10 +33,11 @@
     </header>
 
     <main>
-        <!-- Home Section -->
+        <!-- Hero Section -->
         <section id="home" class="hero">
             <div class="container">
                 <div class="hero-content">
+                    <div class="hero-tagline">The Sexiest Job of the 21st Century</div>
                     <h1>Data Scientist Specializing in AI for Scientific Applications</h1>
                     <p>
                         I work on multi-agent autonomous systems, cheminformatics, and physics NexxtCI AI. 
@@ -44,6 +45,7 @@
                     </p>
                     <div class="hero-btns">
                         <a href="#projects" class="btn btn-primary">View My Work</a>
+                        <a href="#contact" class="btn btn-secondary">Get in Touch</a>
                     </div>
                 </div>
                 <div class="hero-visual">
@@ -55,8 +57,8 @@
         <!-- Projects Section -->
         <section id="projects" class="section">
             <div class="container">
-                <h2 class="section-title">Featured Projects</h2>
-                <h3 class="section-subtitle">Some of my recent work</h3>
+                <h2 class="section-title">Portfolio</h2>
+                <h3 class="section-subtitle">Featured Projects</h3>
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-image">
@@ -65,7 +67,7 @@
                         <div class="project-content">
                             <h3>RL-based Swarm Robotics</h3>
                             <p>
-                                Developing reinforcement learning approaches for controlling cooperative multi-agent robotics.
+                                Developing reinforcement learning approaches for controlling cooperative multi-agent robotics. Using advanced algorithms to enable emergent swarm behaviors in complex environments.
                             </p>
                             <div class="project-links">
                                 <a href="https://github.com" target="_blank"><i class="fab fa-github"></i> GitHub</a>
@@ -80,7 +82,7 @@
                         <div class="project-content">
                             <h3>Fluid Dynamics Research</h3>
                             <p>
-                                Studying physics-informed models for simulating and analyzing complex fluid behavior.
+                                Studying physics-informed models for simulating and analyzing complex fluid behavior. This research combines computational fluid dynamics with neural networks to predict flow patterns.
                             </p>
                             <div class="project-links">
                                 <a href="https://github.com" target="_blank"><i class="fab fa-github"></i> GitHub</a>
@@ -95,11 +97,26 @@
                         <div class="project-content">
                             <h3>"EnergeticGraph" AI Project</h3>
                             <p>
-                                Applying deep learning to chemical informatics for predicting molecular properties and activities.
+                                Applying deep learning to chemical informatics for predicting molecular properties and activities. Leveraging graph neural networks to model complex chemical structures and interactions.
                             </p>
                             <div class="project-links">
                                 <a href="https://github.com" target="_blank"><i class="fab fa-github"></i> GitHub</a>
                                 <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Publication</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="img/project4.jpg" alt="Spotify Artists Analysis">
+                        </div>
+                        <div class="project-content">
+                            <h3>Spotify Artists Analysis</h3>
+                            <p>
+                                An in-depth data analysis and visualization project exploring Spotify's "This Is" playlist series. Uncovering listening patterns and artist popularity metrics using the Spotify API.
+                            </p>
+                            <div class="project-links">
+                                <a href="https://github.com" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Dashboard</a>
                             </div>
                         </div>
                     </div>
@@ -110,7 +127,7 @@
         <!-- About Section -->
         <section id="about" class="section bg-light">
             <div class="container">
-                <h2 class="section-title">About Me</h2>
+                <h2 class="section-title">About</h2>
                 <h3 class="section-subtitle">Ph.D. student at the University of Haifa's Swarm and AI Lab</h3>
                 <div class="about-content">
                     <div class="about-image">
@@ -124,7 +141,10 @@
                             My research focuses on optimizing microswarm behavior in dynamic fluid environments such as blood vessels and pipe systems. I combine physics-based modeling with AI techniques to develop intelligent agent systems that can adapt to changing conditions.
                         </p>
                         <p>
-                            As a Data Scientist at ICSGen.AI, I work on applying AI methods to solve complex scientific challenges in environmental modeling, chemical informatics, and autonomous systems.
+                            As a Data Scientist at ICSGen.AI, I work on applying AI methods to solve complex scientific challenges in environmental modeling, chemical informatics, and autonomous systems. My goal is to bridge the gap between theoretical AI research and practical scientific applications.
+                        </p>
+                        <p>
+                            <strong>Technologies:</strong> Python, PyTorch, TensorFlow, JAX, scikit-learn, pandas, NumPy, R, SQL, MLOps, Docker, Git, AWS
                         </p>
                     </div>
                 </div>
@@ -146,11 +166,11 @@
                             <p class="publication-authors">Berman, J., Smith, A., & Johnson, R.</p>
                             <p class="publication-journal">Journal of Artificial Intelligence Research, 45(2), 112-134</p>
                             <div class="publication-links">
-                                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> View Paper</a>
+                                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Paper</a>
                                 <a href="#" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a>
-                                <a href="#" target="_blank"><i class="fas fa-code"></i> Code</a>
-                                <span class="doi">DOI: 10.1234/jair.2023.45.2.112</span>
+                                <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
                             </div>
+                            <span class="doi">DOI: 10.1234/jair.2023.45.2.112</span>
                         </div>
                     </div>
 
@@ -163,11 +183,11 @@
                             <p class="publication-authors">Berman, J., Williams, T., & Davis, M.</p>
                             <p class="publication-journal">Conference on Neural Information Processing Systems (NeurIPS 2022)</p>
                             <div class="publication-links">
-                                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> View Paper</a>
+                                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Paper</a>
                                 <a href="#" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a>
-                                <a href="#" target="_blank"><i class="fas fa-code"></i> Code</a>
-                                <span class="doi">DOI: 10.1234/neurips.2022.1234</span>
+                                <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
                             </div>
+                            <span class="doi">DOI: 10.1234/neurips.2022.1234</span>
                         </div>
                     </div>
 
@@ -180,11 +200,11 @@
                             <p class="publication-authors">Lee, K., Berman, J., & Thompson, P.</p>
                             <p class="publication-journal">Journal of Computational Physics, 32(4), 78-95</p>
                             <div class="publication-links">
-                                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> View Paper</a>
+                                <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i> Paper</a>
                                 <a href="#" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a>
-                                <a href="#" target="_blank"><i class="fas fa-code"></i> Code</a>
-                                <span class="doi">DOI: 10.1234/jcp.2021.32.4.78</span>
+                                <a href="#" target="_blank"><i class="fab fa-github"></i> Code</a>
                             </div>
+                            <span class="doi">DOI: 10.1234/jcp.2021.32.4.78</span>
                         </div>
                     </div>
                 </div>
@@ -205,7 +225,20 @@
                             <div class="blog-date">May 15, 2023</div>
                             <h3>The Future of Agentic AI in Scientific Discovery</h3>
                             <p>
-                                Exploring how autonomous AI agents could revolutionize the way we conduct scientific research in the next decade.
+                                Exploring how autonomous AI agents could revolutionize the way we conduct scientific research in the next decade. From automated hypothesis generation to robotic lab assistants.
+                            </p>
+                            <a href="#" class="read-more">Read Post <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog-card">
+                        <div class="blog-image">
+                            <img src="img/blog2.jpg" alt="Deep Learning for Molecular Design">
+                        </div>
+                        <div class="blog-content">
+                            <div class="blog-date">April 3, 2023</div>
+                            <h3>Deep Learning Approaches for Molecular Design</h3>
+                            <p>
+                                How deep learning is transforming the field of molecular design and drug discovery. A look at recent advances in generative models for chemical structures.
                             </p>
                             <a href="#" class="read-more">Read Post <i class="fas fa-arrow-right"></i></a>
                         </div>
@@ -233,11 +266,27 @@
                             <i class="fab fa-linkedin"></i>
                             <p><a href="https://linkedin.com/in/josefberman" target="_blank">linkedin.com/in/josefberman</a></p>
                         </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>Haifa, Israel</p>
+                        </div>
                     </div>
                     <div class="contact-form">
-                        <p>Feel free to reach out via email or connect with me on social media!</p>
+                        <p>I'm always open to discussing new projects, research collaborations, or opportunities to apply data science to interesting problems.</p>
                         <a href="mailto:contact@josefberman.com" class="btn btn-primary">Send Email</a>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="section bg-light">
+            <div class="container">
+                <h2 class="section-title">Subscribe</h2>
+                <h3 class="section-subtitle">Stay Updated with My Latest Work</h3>
+                <div style="max-width: 500px; margin: 0 auto; text-align: center;">
+                    <p>Sign up to receive notifications about new research, projects, and blog posts.</p>
+                    <a href="mailto:contact@josefberman.com?subject=Subscribe%20to%20Newsletter&body=I'd%20like%20to%20subscribe%20to%20your%20newsletter." class="btn btn-primary" style="margin-top: 2rem;">Subscribe via Email</a>
                 </div>
             </div>
         </section>
@@ -252,6 +301,7 @@
                 <div class="footer-social">
                     <a href="https://github.com/josefberman" target="_blank"><i class="fab fa-github"></i></a>
                     <a href="https://linkedin.com/in/josefberman" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://twitter.com/josefberman" target="_blank"><i class="fab fa-twitter"></i></a>
                 </div>
             </div>
             <div class="footer-license">
