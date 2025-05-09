@@ -2,7 +2,7 @@ Image Placeholders README
 
 This directory should contain the following images for your portfolio website:
 
-1. profile-placeholder.jpg - Profile photo for the About section (recommended size: 500x500px, circular crop)
+1. profile-pic.png - Profile photo for the About section (recommended size: 500x500px, circular crop)
 2. project1.jpg - RL-based Swarm Robotics project thumbnail (recommended size: 800x500px)
 3. project2.jpg - Fluid Dynamics Research project thumbnail (recommended size: 800x500px)
 4. project3.jpg - EnergeticGraph AI Project thumbnail (recommended size: 800x500px)

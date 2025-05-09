@@ -36,7 +36,7 @@ A modern, professional portfolio website for data scientists built with HTML, CS
    - Contact details
 
 2. Replace placeholder images in the `img` directory:
-   - `profile-placeholder.jpg` - Your profile photo (circular crop recommended)
+   - `profile-pic.png` - Your profile photo (circular crop recommended)
    - `project1.jpg`, `project2.jpg`, etc. - Project thumbnails
    - `blog1.jpg`, `blog2.jpg` - Blog post thumbnails
    - See `img/README.txt` for detailed image guidelines
