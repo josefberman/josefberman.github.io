@@ -778,6 +778,18 @@ footer {
     .contact-item a {
         font-size: 2rem;
     }
+    
+    .logo a {
+        font-size: 1.2rem;
+    }
+    
+    .logo a::after {
+        content: "Josef Berman";
+    }
+    
+    .logo a span {
+        display: none;
+    }
 }
 
 /* Header scroll effect */
