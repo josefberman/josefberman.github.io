@@ -740,6 +740,9 @@ footer {
 
 /* Mobile menu styles for responsive design */
 @media screen and (max-width: 768px) {
+    /* .nav-links {
+        display: none;
+    } */
     .nav-links {
         position: fixed;
         top: 70px;
@@ -845,10 +848,9 @@ header.scrolled {
 }
 
 @media screen and (max-width: 768px) {
-    .nav-links {
+    /* .nav-links {
         display: none;
-    }
-    
+    } */
     .mobile-menu-btn {
         display: block;
     }
