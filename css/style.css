@@ -790,6 +790,26 @@ footer {
     .logo a span {
         display: none;
     }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+    
+    .about-image {
+        margin: 0 auto;
+        max-width: 300px;
+        order: -1;
+    }
+    
+    .about-text {
+        max-width: 100%;
+        padding: 0 var(--space-md);
+    }
+    
+    .about-text p {
+        margin-bottom: var(--space-md);
+    }
 }
 
 /* Header scroll effect */
