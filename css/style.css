@@ -900,11 +900,6 @@ footer {
     .logo a {
         font-size: 1.35rem;
     }
-
-    /* Single-line logo: hide subtitle only (.logo a > span:first-of-type beats .logo a span in specificity) */
-    .logo .logo-sub {
-        display: none;
-    }
     
     .about-content {
         display: flex;
