@@ -900,12 +900,9 @@ footer {
     .logo a {
         font-size: 1.35rem;
     }
-    
-    .logo a::after {
-        content: "Josef Berman";
-    }
-    
-    .logo a span {
+
+    /* Single-line logo: hide subtitle only (.logo a > span:first-of-type beats .logo a span in specificity) */
+    .logo .logo-sub {
         display: none;
     }
     
