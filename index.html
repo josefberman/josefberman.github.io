@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Josef Berman - Data Scientist specializing in AI for scientific discovery">
-    <title>Josef Berman - Data Science Meets Nature</title>
+    <meta name="description" content="Josef Berman — data scientist: ML for agents in flow, molecular inference, and environmental forecasting.">
+    <title>Josef Berman — Data scientist &amp; AI researcher</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/comfortaa.css">
     <link rel="stylesheet" href="css/profile-adjustments.css">
@@ -12,45 +12,30 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
-    <!-- Three.js and VANTA.NET libraries -->
-    <script src="js/vanta/three.r134.min.js"></script>
-    <script src="js/vanta/vanta.net.min.js"></script>
-    <style>
-        /* Network background */
-        .hero {
-            position: relative;
-            overflow: hidden;
+    <script type="importmap">
+    {
+        "imports": {
+            "three": "https://cdn.jsdelivr.net/npm/three@0.170.0/build/three.module.js",
+            "three/addons/": "https://cdn.jsdelivr.net/npm/three@0.170.0/examples/jsm/"
         }
-        
-        .neural-background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 0;
-            opacity: 0.5; /* Change to 50% opacity */
-        }
-        
-        .hero .container {
-            position: relative;
-            z-index: 2;
-        }
-    </style>
+    }
+    </script>
 </head>
 <body>
     <header>
         <nav class="container">
             <div class="logo">
-                <a href="index.html"><span>Josef Berman - AI Researcher | Data Scientist</span></a>
+                <a href="index.html">
+                    <span>Josef Berman</span>
+                    <span class="logo-sub">Data scientist · AI research</span>
+                </a>
             </div>
             <ul class="nav-links">
                 <li><a href="#home" class="active">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#projects">Projects</a></li>
-                <li><a href="#blog">Blog</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
             <div class="mobile-menu-btn">
@@ -62,58 +47,78 @@
     <main>
         <!-- Hero Section -->
         <section id="home" class="hero">
-            <div class="neural-background">
-                <!-- VANTA.NET will be initialized on this element -->
+            <div class="hero-media" aria-hidden="true">
+                <canvas id="hero-swarm-canvas" class="hero-canvas" width="1600" height="900"></canvas>
+                <div class="hero-media__scrim"></div>
             </div>
-            <div class="container">
+            <div class="container hero-layout">
                 <div class="hero-content">
-                    <div class="hero-tagline">THE FUTURE OF SCIENCE IS INTELLIGENT</div>
-                    <h1>Data Scientist<br>Connecting AI to<br>the Laws of Nature</h1>
+                    <div class="hero-pills">
+                        <span class="hero-pill">Scientific ML</span>
+                        <span class="hero-pill">Agents</span>
+                        <span class="hero-pill">Field data</span>
+                    </div>
+                    <h1>Machine learning grounded in <span class="hero-title-accent">physics</span></h1>
                     <p>
-                        I build systems where machine learning doesn't just analyze the world - it participates in it. From microrobot swarms in flowing blood to AI chemists parsing molecules, my work fuses artificial intelligence with the natural and exact sciences to push discovery further, faster, and smarter.
+                        Agents in flow, structure from spectra, forecasting when sensors are thin. Models and pipelines built to hold up in the real world.
                     </p>
                     <div class="hero-btns">
                         <a href="#about" class="btn btn-primary">Who am I?</a>
-                        <a href="#projects" class="btn btn-secondary">Explore My Work</a>
+                        <a href="#projects" class="btn btn-secondary">See selected work</a>
                         <a href="#contact" class="btn btn-primary">Collaborate</a>
                     </div>
-                </div>
-                <div class="hero-visual">
-                    <canvas id="swarmCanvas"></canvas>
                 </div>
             </div>
         </section>
 
         <!-- About Section -->
-        <section id="about" class="section bg-light">
+        <section id="about" class="section section-muted">
             <div class="container">
-                <h3 class="section-subtitle">Data scientist fusing AI with the laws of nature - from fluid dynamics to molecular design</h3>
+                <h3 class="section-subtitle section-subtitle-accent">Hello</h3>
                 <div class="about-content">
                     <div class="about-image">
                         <img src="img/profile-pic.png" alt="Josef Berman">
                     </div>
                     <div class="about-text">
                         <p>
-                            I'm Josef Berman, a data scientist and researcher building bridges between artificial intelligence and the natural world. My work lives at the intersection of multi-agent systems, scientific discovery, and intelligent automation.
+                            I’m Josef Berman—data scientist and researcher at the overlap of RL, computational physics, and scientific ML: learning in dynamic physical environments, structure and signals from scientific data, and forecasting when real-world measurements are sparse. I optimize for systems that respect physics and instrumentation, not just offline metrics.
                         </p>
-                        <p>
-                            At the heart of everything I do is a simple idea: AI shouldn't just analyze science - it should participate in it. I create agentic systems that interact, adapt, and collaborate - whether they're learning to navigate complex physical environments, forecasting air pollution, or decoding the structure of molecules. Think swarms of autonomous microrobots, AI chemists parsing spectroscopic data, or neural networks predicting environmental shifts.
-                        </p>
-                        <p>
-                            With a background spanning reinforcement learning, computational physics, and data engineering, I design systems that are grounded in the laws of nature but powered by the mathematics of intelligence.
-                        </p>
-                        <p>
-                            <strong>Technologies:</strong> Python, PyTorch, TensorFlow, scikit-learn, LangGraph, LangChain, PhiFlow, RDKit, Stable-Baselines3, Gradio
-                        </p>
+                        <div class="tech-pills about-tech" aria-label="Technologies">
+                            <div class="tech-pills-group">
+                                <span class="tech-pills-group-label" id="tech-grp-core">Core &amp; ML</span>
+                                <div class="tech-pills-group-items" aria-labelledby="tech-grp-core">
+                                    <span>Python</span>
+                                    <span>PyTorch</span>
+                                    <span>TensorFlow</span>
+                                    <span>scikit-learn</span>
+                                </div>
+                            </div>
+                            <div class="tech-pills-group">
+                                <span class="tech-pills-group-label" id="tech-grp-agents">Agents &amp; RL</span>
+                                <div class="tech-pills-group-items" aria-labelledby="tech-grp-agents">
+                                    <span>Stable-Baselines3</span>
+                                    <span>LangGraph</span>
+                                    <span>LangChain</span>
+                                    <span>Gradio</span>
+                                </div>
+                            </div>
+                            <div class="tech-pills-group">
+                                <span class="tech-pills-group-label" id="tech-grp-sci">Scientific</span>
+                                <div class="tech-pills-group-items" aria-labelledby="tech-grp-sci">
+                                    <span>PhiFlow</span>
+                                    <span>RDKit</span>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects" class="section">
+        <section id="projects" class="section section-surface section-dots">
             <div class="container">
-                <h3 class="section-subtitle">Featured Projects</h3>
+                <h3 class="section-subtitle section-subtitle-accent">Selected work</h3>
                 <div class="projects-grid">
                     <div class="project-card">
                         <div class="project-image">
@@ -121,9 +126,9 @@
                         </div>
                         <div class="project-content">
                             <h3>FluxSwarm</h3>
-                            <div class="project-subheader">Smart microswarms in complex flows</div>
+                            <div class="project-subheader">RL swarms in deforming flow</div>
                             <p>
-                                Reinforcement learning meets fluid dynamics: FluxSwarm trains microrobot swarms to maneuver through dynamic environments like blood vessels or pipelines. The system learns to resist flow, collaborate under pressure, and adapt to nonlinear conditions - bridging bio-inspired robotics and AI.
+                                Train micro-agent collectives in time-varying velocity fields—channels, vasculature, and other flows where drag and coordination matter.
                             </p>
                             <div class="project-links">
                                 <a href="https://github.com/josefberman/FluxSwarm" target="_blank"><i class="fab fa-github"></i> GitHub</a>
@@ -136,9 +141,9 @@
                         </div>
                         <div class="project-content">
                             <h3>NMR2structure</h3>
-                            <div class="project-subheader">From spectra to structure - automatically</div>
+                            <div class="project-subheader">1D NMR → substructures</div>
                             <p>
-                                Using gradient boosting and cheminformatics, this tool infers molecular substructures directly from 1D NMR spectral data. It aims to automate and accelerate the process of structure elucidation, offering interpretable and efficient insights for chemists.
+                                Gradient boosting + cheminformatics to propose subfragments from 1D spectra—faster elucidation with interpretable hints.
                             </p>
                             <div class="project-links">
                                 <a href="https://github.com/josefberman/NMR2structure" target="_blank"><i class="fab fa-github"></i> GitHub</a>
@@ -152,9 +157,9 @@
                         </div>
                         <div class="project-content">
                             <h3>syN-BEATS</h3>
-                            <div class="project-subheader">Pollution forecasting with deep ensemble learning</div>
+                            <div class="project-subheader">Sparse air-quality forecasting</div>
                             <p>
-                                syN-BEATS is a neural ensemble model designed to predict airborne pollutant concentrations with limited sensor data. Built on the N-BEATS architecture, it achieves strong performance even in under-monitored regions - empowering environmental agencies with sharper forecasting.
+                                Neural ensemble on N-BEATS for pollutant levels when monitoring networks are thin or uneven.
                             </p>
                             <div class="project-links">
                                 <a href="https://github.com/josefberman/syN-BEATS" target="_blank"><i class="fab fa-github"></i> GitHub</a>
@@ -168,9 +173,9 @@
                         </div>
                         <div class="project-content">
                             <h3>EnergeticGraph</h3>
-                            <div class="project-subheader">An AI chemist for energetic materials</div>
+                            <div class="project-subheader">RAG + models for energetic materials</div>
                             <p>
-                                A retrieval-augmented generation (RAG) system fused with molecular property predictors to uncover hidden features of explosive compounds. EnergeticGraph links semantic search, SMILES translation, and graph-based inference to support chemical safety and synthesis research.
+                                Retrieval-augmented Q&amp;A with property predictors and graph reasoning over energetic compounds—SMILES, docs, and learned signals together.
                             </p>
                             <div class="project-links">
                                 <a href="https://github.com/josefberman/EnergeticGraph" target="_blank"><i class="fab fa-github"></i> GitHub</a>
@@ -184,32 +189,10 @@
         <!-- Publications Section -->
         <!-- Removed Publications & Papers section as requested -->
 
-        <!-- Blog Section -->
-        <section id="blog" class="section bg-light">
-            <div class="container">
-                <h3 class="section-subtitle">Latest from the Blog</h3>
-                <div class="blog-posts">
-                    <div class="blog-card">
-                        <div class="blog-image">
-                            <img src="img/blog1.jpg" alt="Agentic AI in Science">
-                        </div>
-                        <div class="blog-content">
-                            <div class="blog-date">May 10, 2025</div>
-                            <h3>The Future of Agentic AI in Scientific Discovery</h3>
-                            <p>
-                                Exploring how autonomous AI agents could revolutionize the way we conduct scientific research in the next decade. From automated hypothesis generation to robotic lab assistants.
-                            </p>
-                            <a href="blog/agentic-ai-scientific-discovery.html" class="read-more">Read Post <i class="fas fa-arrow-right"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <!-- Contact Section -->
-        <section id="contact" class="section">
+        <section id="contact" class="section section-contact">
             <div class="container">
-                <h3 class="section-subtitle">Get in Touch</h3>
+                <h3 class="section-subtitle section-subtitle-accent">Let’s talk</h3>
                 <div class="contact-content">
                     <div class="contact-info">
                         <div class="contact-item">
@@ -223,7 +206,7 @@
                         </div>
                     </div>
                     <div class="contact-form">
-                        <p>I'm always open to discussing new projects, research collaborations, or opportunities to apply data science to interesting problems.</p>
+                        <p>Open to research collaborations and applied ML at the physics–chemistry–ML boundary.</p>
                         <a href="mailto:josefberman91@gmail.com" class="btn btn-primary">Send Email</a>
                     </div>
                 </div>
@@ -235,7 +218,7 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-copyright">
-                    <p>&copy; 2025 Josef Berman. All rights reserved.</p>
+                    <p>&copy; 2026 Josef Berman. All rights reserved.</p>
                 </div>
                 <div class="footer-social">
                     <a href="https://github.com/josefberman" target="_blank"><i class="fab fa-github"></i></a>
@@ -248,25 +231,7 @@
         </div>
     </footer>
 
+    <script type="module" src="js/heroSwarmLandscape.js"></script>
     <script src="js/main.js"></script>
-    <script>
-    VANTA.NET({
-      el: ".neural-background",
-      mouseControls: true,
-      touchControls: true,
-      gyroControls: false,
-      minHeight: 200.00,
-      minWidth: 200.00,
-      scale: 1.00,
-      scaleMobile: 1.00,
-      color: 0xff7043,
-      backgroundColor: 0x0a182a,
-      points: 5.00,
-      spacing: 14.00,
-      colorAlpha: 0.5,
-      lineWidth: 0.8,
-      speed: 0.8
-    })
-    </script>
 </body>
 </html> 
