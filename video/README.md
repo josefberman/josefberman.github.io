@@ -1,12 +1,12 @@
 # Hero background (legacy video assets)
 
-The **homepage hero** now uses a **Three.js** scene (`js/heroSwarmLandscape.js`): a procedural **periodic height field** and **swarm rovers**—not this MP4.
+The **homepage hero** now uses a **Three.js** scene (`js/heroSwarmLandscape.js`): a procedural **periodic height field** and **swarm rovers** - not this MP4.
 
 These files are kept if you want to switch back to a video hero:
 
-**`hero-bg.mp4`** — Mandelbrot zoom clip (720p, ~4MB).
+**`hero-bg.mp4`** - Mandelbrot zoom clip (720p, ~4MB).
 
-**`hero-poster.jpg`** — Still frame from that clip.
+**`hero-poster.jpg`** - Still frame from that clip.
 
 ## Regenerate the clip (full quality source, then compress)
 

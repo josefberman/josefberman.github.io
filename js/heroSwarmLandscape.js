@@ -89,12 +89,12 @@ if (!canvas) {
   const MAX_R = 5.45;
   const SOFT_SPRING = 0.24;
   const ORIGIN_LERP = 0.065;
-  /** Recentre world when drift is large — Float32 positions lose sub-chunk detail at ~1e6+; earlier you get banding/flat relief. */
+  /** Recentre world when drift is large - Float32 positions lose sub-chunk detail at ~1e6+; earlier you get banding/flat relief. */
   const MAX_ORIGIN_DRIFT = 20;
 
   /**
    * Periodic terrain: sum of smooth sine/cosine layers (incommensurate frequencies)
-   * so every neighborhood has hills and valleys — no Gaussian tails or flat basins.
+   * so every neighborhood has hills and valleys - no Gaussian tails or flat basins.
    */
   function potential(x, z) {
     const k = 0.36;
@@ -111,7 +111,7 @@ if (!canvas) {
     return potential(x, z) * 0.82;
   }
 
-  /** Stream ψ — simpler than before; time-varying so motion doesn’t lock. */
+  /** Stream ψ - simpler than before; time-varying so motion doesn’t lock. */
   function streamPsi(x, z, t) {
     return (
       1.08 * Math.sin(0.36 * x + 0.11 * t) * Math.cos(0.33 * z - 0.09 * t) +

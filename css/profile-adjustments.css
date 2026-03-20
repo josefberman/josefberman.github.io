@@ -1,4 +1,4 @@
-/* Profile image column — balanced with body text */
+/* Profile image column - balanced with body text */
 
 .about-content {
     grid-template-columns: minmax(280px, 420px) 1fr;
