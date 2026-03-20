@@ -939,6 +939,25 @@ footer {
         margin-bottom: var(--space-md);
         text-align: left;
     }
+
+    .tech-pills.about-tech {
+        align-items: center;
+    }
+
+    .tech-pills.about-tech .tech-pills-group {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        text-align: center;
+    }
+
+    .tech-pills.about-tech .tech-pills-group-label {
+        text-align: center;
+        padding-top: 0;
+    }
+
+    .tech-pills.about-tech .tech-pills-group-items {
+        justify-content: center;
+    }
     
     .hero-btns {
         flex-direction: column;
