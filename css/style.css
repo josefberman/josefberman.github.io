@@ -952,17 +952,33 @@ footer {
 
     .tech-pills.about-tech .tech-pills-group {
         grid-template-columns: 1fr;
-        justify-items: center;
+        justify-items: stretch;
         text-align: center;
     }
 
     .tech-pills.about-tech .tech-pills-group-label {
         text-align: center;
         padding-top: 0;
+        justify-self: center;
     }
 
+    /* One row per category; scroll horizontally if the row is wider than the tray */
     .tech-pills.about-tech .tech-pills-group-items {
+        flex-wrap: nowrap;
         justify-content: center;
+        width: 100%;
+        max-width: 100%;
+        overflow-x: auto;
+        overflow-y: hidden;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior-x: contain;
+        scrollbar-width: thin;
+        padding: 0.15rem 0 0.35rem;
+        gap: 0.45rem;
+    }
+
+    .tech-pills.about-tech .tech-pills-group-items span {
+        flex-shrink: 0;
     }
     
     .hero-btns {
