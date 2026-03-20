@@ -80,10 +80,12 @@ if (!canvas) {
   const SEG = 66;
   const N = 42;
   const DT = 0.018;
-  const STREAM = 2.15;
-  const DAMP = 0.972;
+  const STREAM = 1.35;
+  const DAMP = 0.976;
   const REPULSE = 0.032;
-  const NOISE = 0.16;
+  const NOISE = 0.11;
+  /** Velocity → world position per step (lower = slower rovers). */
+  const POS_INTEGRATE = 4.5;
   const MAX_R = 5.45;
   const SOFT_SPRING = 0.24;
   const ORIGIN_LERP = 0.065;
@@ -327,8 +329,8 @@ if (!canvas) {
     for (let i = 0; i < N; i++) {
       vx[i] *= DAMP;
       vz[i] *= DAMP;
-      px[i] += vx[i] * dt * 8;
-      pz[i] += vz[i] * dt * 8;
+      px[i] += vx[i] * dt * POS_INTEGRATE;
+      pz[i] += vz[i] * dt * POS_INTEGRATE;
       const dx = px[i] - originX;
       const dz = pz[i] - originZ;
       const r = Math.hypot(dx, dz);
