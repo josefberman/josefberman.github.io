@@ -1,34 +1,8 @@
-/* 
- * Left-aligned Section Headers 
- * Aligns h3 section headers to the left of their content
- */
+/* Section headings align to content grid */
 
-/* Make the section subtitles left-aligned */
 .section-subtitle {
     text-align: left;
-    max-width: 100%;
+    max-width: 42rem;
     margin-left: 0;
-    margin-bottom: 2rem;
+    margin-right: 0;
 }
-
-/* Adjust spacing for better visual separation */
-.about-content,
-.projects-grid,
-.publications-list,
-.blog-posts,
-.contact-content {
-    margin-left: 2rem;
-    padding-left: 2rem;
-}
-
-/* Responsive adjustments */
-@media screen and (max-width: 768px) {
-    .about-content,
-    .projects-grid,
-    .publications-list,
-    .blog-posts,
-    .contact-content {
-        margin-left: 0;
-        padding-left: 0;
-    }
-} 

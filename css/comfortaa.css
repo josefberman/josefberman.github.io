@@ -1,29 +1,19 @@
-/* 
- * Comfortaa Typography Settings
- * For Josef Berman's Portfolio
- */
+/* Typography — Fraunces (headings) + Outfit (UI) */
 
 :root {
-    /* Set Comfortaa as the main font */
-    --font-heading: 'Comfortaa', 'Helvetica Neue', 'Arial', sans-serif;
-    --font-body: 'Comfortaa', 'Helvetica Neue', 'Arial', sans-serif;
+    --font-heading: 'Fraunces', Georgia, serif;
+    --font-body: 'Outfit', system-ui, sans-serif;
 }
 
-/* Base typography adjustments */
 body {
     font-family: var(--font-body);
     font-weight: 400;
-    line-height: 1.6;
+    line-height: 1.65;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-heading);
     font-weight: 600;
-    letter-spacing: -0.01em;
-}
-
-h1 {
-    letter-spacing: -0.01em;
 }
 
 p {
@@ -31,155 +21,54 @@ p {
     line-height: 1.7;
 }
 
-.section-title {
-    letter-spacing: 0.05em;
-    font-weight: 600;
-}
-
-.section-subtitle {
-    font-weight: 300;
-    letter-spacing: normal;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Navbar adjustments */
 .logo a {
-    font-family: var(--font-heading);
+    font-family: var(--font-body);
     font-weight: 600;
-    letter-spacing: normal;
 }
 
 .nav-links a {
     font-family: var(--font-body);
-    font-weight: 400;
-    letter-spacing: 0.02em;
-}
-
-/* Hero section typography */
-.hero-tagline {
-    font-family: var(--font-body);
-    font-weight: 600;
-    letter-spacing: 0.08em;
+    font-weight: 500;
 }
 
 .hero-content h1 {
+    font-family: var(--font-heading);
     font-weight: 700;
-    line-height: 1.2;
 }
 
-/* Buttons */
 .btn {
     font-family: var(--font-body);
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    border-radius: 12px; /* More rounded for Comfortaa's style */
-    padding: 0.8rem 1.8rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-}
-
-.btn:hover {
-    transform: translateY(-2px);
-}
-
-.btn-primary:hover {
-    box-shadow: 0 4px 12px rgba(255, 112, 67, 0.3);
-}
-
-/* Project cards */
-.project-card {
-    border-radius: 12px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    font-weight: 600;
 }
 
 .project-content h3 {
+    font-family: var(--font-heading);
     font-weight: 600;
-    margin-bottom: 0.5rem;
 }
 
 .project-subheader {
-    font-weight: 500;
-    margin-bottom: 1rem;
-}
-
-.project-content p {
-    font-weight: 400;
-    line-height: 1.6;
-}
-
-/* Publication items */
-.publication-item {
-    border-radius: 12px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.publication-item:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.1);
-}
-
-.publication-content h3 {
+    font-family: var(--font-body);
     font-weight: 600;
-    margin-bottom: 0.5rem;
-}
-
-.publication-journal {
-    font-style: normal;
-    font-weight: 300;
-}
-
-.publication-year {
-    font-weight: 600;
-}
-
-.publication-authors {
-    font-size: 0.95rem;
-}
-
-/* Blog section */
-.blog-card {
-    border-radius: 12px;
-    overflow: hidden;
 }
 
 .blog-content h3 {
+    font-family: var(--font-heading);
     font-weight: 600;
-    margin-bottom: 0.75rem;
 }
 
-.blog-date {
-    font-weight: 500;
-}
-
-.read-more {
-    font-weight: 500;
-    letter-spacing: 0.02em;
-}
-
-/* Footer */
 .footer-content {
     font-family: var(--font-body);
     font-weight: 400;
 }
 
-/* Mobile adjustments */
 @media (max-width: 768px) {
     h1 {
-        font-size: 2.5rem;
+        font-size: 2.25rem;
     }
-    
     h2 {
-        font-size: 2rem;
+        font-size: 1.75rem;
     }
-    
     h3 {
-        font-size: 1.5rem;
+        font-size: 1.35rem;
     }
-} 
+}

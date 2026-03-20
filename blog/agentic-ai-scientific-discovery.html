@@ -12,7 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;1,9..144,400&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="../img/favicon.svg" type="image/svg+xml">
     <style>
         .blog-post-container {
@@ -91,7 +91,7 @@
         
         .blog-navigation {
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
             margin: var(--space-xxl) 0;
             padding-top: var(--space-lg);
             border-top: 1px solid var(--border-color);
@@ -124,8 +124,11 @@
             }
         }
         
-        .blog-content, .blog-content p, .blog-content li, .blog-content h2, .blog-content h3 {
-            font-family: 'Comfortaa', 'Helvetica Neue', sans-serif;
+        .blog-content h2, .blog-content h3 {
+            font-family: var(--font-heading);
+        }
+        .blog-content, .blog-content p, .blog-content li {
+            font-family: var(--font-body);
         }
     </style>
 </head>
@@ -133,13 +136,15 @@
     <header>
         <nav class="container">
             <div class="logo">
-                <a href="../index.html"><span>Josef Berman - AI Researcher | Data Scientist</span></a>
+                <a href="../index.html">
+                    <span>Josef Berman</span>
+                    <span class="logo-sub">Data scientist · AI research</span>
+                </a>
             </div>
             <ul class="nav-links">
                 <li><a href="../index.html#home">Home</a></li>
                 <li><a href="../index.html#about">About</a></li>
                 <li><a href="../index.html#projects">Projects</a></li>
-                <li><a href="../index.html#blog" class="active">Blog</a></li>
                 <li><a href="../index.html#contact">Contact</a></li>
             </ul>
             <div class="mobile-menu-btn">
@@ -212,10 +217,7 @@
             
             <div class="blog-navigation">
                 <div class="prev">
-                    <a href="../index.html#blog"><i class="fas fa-arrow-left"></i> Back to Blog</a>
-                </div>
-                <div class="next">
-                    <a href="deep-learning-molecular-design.html">Next Post <i class="fas fa-arrow-right"></i></a>
+                    <a href="../index.html"><i class="fas fa-arrow-left"></i> Back to home</a>
                 </div>
             </div>
         </article>
